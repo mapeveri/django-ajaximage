@@ -94,6 +94,13 @@
         if( ! regex.test(file.type)){
             return alert('Incorrect image format. Allowed (jpg, gif, png).')
         }
+        
+        var size = file.size;
+        // 2mg max
+        if (size > 2000000) {
+            alert('The file exceeds 2 mg');
+            return false;
+        }
 
         el.className = 'ajaximage progress-active'
         disableSubmit(true)
