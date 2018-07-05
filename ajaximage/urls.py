@@ -1,13 +1,10 @@
-try:  # pre 1.6
-    from django.conf.urls.defaults import url, patterns
-except ImportError:
-    from django.conf.urls import url, patterns
+from django.conf.urls import url
+from ajaximage.views import ajaximage
 
-urlpatterns = patterns(
-    '',
+
+urlpatterns = [
     url(
         '^upload/(?P<upload_to>.*)/(?P<max_width>\d+)/(?P<max_height>\d+)/(?P<crop>\d+)',
-        'ajaximage.views.ajaximage',
-        name='ajaximage'
+        ajaximage, name='ajaximage'
     ),
-)
+]
