@@ -96,9 +96,9 @@
         }
         
         var size = file.size;
-        // 2mg max
-        if (size > 2000000) {
-            alert('The file exceeds 2 mg');
+        // 5mg max
+        if (size > 5000000) {
+            alert('The file exceeds 5 mg');
             return false;
         }
 
